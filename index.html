@@ -12,7 +12,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url('bg_stars.gif'); /* Use local file if available */
+      background-image: url('bg_stars.gif'); /* Ensure this path matches your actual file */
       background-repeat: repeat;
       background-attachment: fixed;
     }
@@ -20,12 +20,18 @@
     .menu-container {
       position: relative;
     }
+
+    .menu-image {
+      width: auto; /* Prevents stretching */
+      height: auto; /* Ensures natural image height */
+      max-width: 100%; /* Keeps it responsive within available space */
+    }
   </style>
 </head>
 <body>
   <div class="menu-container">
-    <!-- Image with fixed dimensions -->
-    <img src="IMG_0530.PNG" usemap="#image-map" alt="Pizza Paradox Menu">
+    <!-- Image with a fixed width and natural height to avoid stretching -->
+    <img src="IMG_0530.PNG" usemap="#image-map" alt="Pizza Paradox Menu" class="menu-image">
 
     <!-- Image Map -->
     <map name="image-map">
