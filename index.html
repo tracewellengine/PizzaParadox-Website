@@ -12,36 +12,29 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url('bg_stars.gif'); /* Updated to use a local file if available */
+      background-image: url('bg_stars.gif'); /* Use local file if available */
       background-repeat: repeat;
       background-attachment: fixed;
     }
 
     .menu-container {
       position: relative;
-      width: 100%;
-      max-width: 1000px;
-    }
-
-    .menu-image {
-      width: 100%;
-      height: auto;
     }
   </style>
 </head>
 <body>
   <div class="menu-container">
-    <!-- Use the image located in the same folder -->
-    <img src="IMG_0530.PNG" alt="Pizza Paradox Menu" usemap="#map" class="menu-image">
+    <!-- Image with fixed dimensions -->
+    <img src="IMG_0530.PNG" usemap="#image-map" alt="Pizza Paradox Menu">
 
-    <!-- Define clickable areas with percentage-based coordinates -->
-    <map name="map">
-      <area shape="circle" coords="44.6%, 50.7%, 10.6%" href="index.html" title="PizzaParadoxHome" />
-      <area shape="circle" coords="55.1%, 81.0%, 8.8%" href="tonyspizzapod.html" title="Tony'sPizzaPod" />
-      <area shape="circle" coords="36.2%, 84.0%, 8.1%" href="jupiter.html" title="Jupiter" />
-      <area shape="circle" coords="68.6%, 68.7%, 5.6%" href="contact.html" title="Contact" />
-      <area shape="circle" coords="73.1%, 51.9%, 7.0%" href="behindthescenes.html" title="BehindtheScenes" />
-      <area shape="circle" coords="20.1%, 62.8%, 3.8%" href="https://www.instagram.com/whatispizzaparadox/" title="Instagram" />
-      <area shape="circle" coords="13.7%, 52.1%, 3.8%" href="https://www.facebook.com/profile.php?id=61566922469612" title="Facebook" />
-      <area shape="circle" coords="19.4%, 39.8%, 5.4%" href="https://www.youtube.com/@PizzaParadox" title="Youtube" />
-      <area shape
+    <!-- Image Map -->
+    <map name="image-map">
+      <area target="_blank" alt="DeadEarth" title="DeadEarth" href="deadearth.html" coords="900,351,194" shape="circle">
+      <area target="_blank" alt="Youtube" title="Youtube" href="https://www.youtube.com/@PizzaParadox" coords="436,663,108" shape="circle">
+      <area target="_blank" alt="Facebook" title="Facebook" href="https://www.facebook.com/profile.php?id=61566922469612" coords="309,859,99" shape="circle">
+      <area target="_blank" alt="Instagram" title="Instagram" href="https://www.instagram.com/whatispizzaparadox/" coords="474,1037,73" shape="circle">
+      <area target="_blank" alt="Moonport66" title="Moonport66" href="moonport66.html" coords="1258,259,170" shape="circle">
+    </map>
+  </div>
+</body>
+</html>
