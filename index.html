@@ -12,25 +12,25 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url('bg_stars.gif'); /* Ensure this path matches your actual file */
+      background-image: url('bg_stars.gif'); /* Update to the correct path */
       background-repeat: repeat;
       background-attachment: fixed;
     }
 
     .menu-container {
       position: relative;
+      max-width: 100vw; /* Scale to screen width */
     }
 
     .menu-image {
-      width: auto; /* Prevents stretching */
-      height: auto; /* Ensures natural image height */
-      max-width: 100%; /* Keeps it responsive within available space */
+      width: 100%; /* Scale to container width */
+      height: auto; /* Keep aspect ratio */
     }
   </style>
 </head>
 <body>
   <div class="menu-container">
-    <!-- Image with a fixed width and natural height to avoid stretching -->
+    <!-- Scalable image that fits the screen width -->
     <img src="IMG_0530.PNG" usemap="#image-map" alt="Pizza Paradox Menu" class="menu-image">
 
     <!-- Image Map -->
@@ -42,5 +42,32 @@
       <area target="_blank" alt="Moonport66" title="Moonport66" href="moonport66.html" coords="1258,259,170" shape="circle">
     </map>
   </div>
+
+  <script>
+    // Adjust map coordinates proportionally when image resizes
+    function scaleImageMap() {
+      const img = document.querySelector('.menu-image');
+      const map = document.querySelector('map[name="image-map"]');
+      const originalWidth = 1600; // Replace with the original width of your image
+      const originalHeight = 1200; // Replace with the original height of your image
+
+      const scaleX = img.clientWidth / originalWidth;
+      const scaleY = img.clientHeight / originalHeight;
+
+      map.querySelectorAll('area').forEach((area) => {
+        const coords = area.dataset.coords.split(',').map(Number);
+        area.coords = coords.map((coord, i) => (i % 2 === 0 ? coord * scaleX : coord * scaleY)).join(',');
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('area').forEach((area) => {
+        area.dataset.coords = area.coords;
+      });
+      scaleImageMap();
+    });
+
+    window.addEventListener('resize', scaleImageMap);
+  </script>
 </body>
 </html>
