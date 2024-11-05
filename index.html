@@ -12,7 +12,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url('bg_stars.gif'); /* Make sure this path is correct */
+      background-image: url('bg_stars.gif'); /* Ensure the file path is correct */
       background-repeat: repeat;
       background-attachment: fixed;
     }
@@ -24,8 +24,9 @@
     }
 
     .menu-image {
-      width: 100%; /* Scale image to fit screen width */
+      width: 100%; /* Ensures image scales to fit screen width */
       height: auto;
+      display: block; /* Ensures image is displayed */
     }
   </style>
 </head>
@@ -42,12 +43,11 @@
     </map>
   </div>
 
-  <!-- Include the image-map-resizer script to make image map responsive -->
+  <!-- Include the image-map-resizer script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
   <script>
-    // Initialize the image map resizer
     document.addEventListener('DOMContentLoaded', function () {
-      imageMapResize();
+      imageMapResize(); // This function activates the responsive image map
     });
   </script>
 </body>
